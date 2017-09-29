@@ -5,7 +5,7 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
    <meta name="theme-color" content="#8e24aa">
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-   <title>AsMoz Chat || Social Networking Template</title>
+   <title>Funkit || Complete Chat Application</title>
    <link rel="stylesheet" type="text/css" href="css/chat.css" media="screen,projection" />
    <link rel="stylesheet" type="text/css" href="css/hover.css" />
    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -33,9 +33,9 @@
          <div class="panel-header panel-flex">
             <div class="panel-menu-list">
                <div class="panel-menu">
-                  <a href="index.html">
+                  <!-- <a href="index.html"> -->
                      <div class="p-menu-item panel-home"></div>
-                  </a>
+                  <!-- </a> -->
                </div>
                <div class="panel-menu">
                   <a href="notifications.html">
@@ -57,7 +57,7 @@
                      <div class="p-menu-item panel-images"></div>
                   </a>
                </div>
-               <div class="panel-menu panel-search"></div>
+               <!-- <div class="panel-menu panel-search"></div> -->
             </div>
          </div>
          <!--Panel LEFT MENU FINISHED-->
@@ -84,33 +84,6 @@
                      <div class="count">9+</div>
                   </div>
                </div>
-               <div class="recent-user">
-                  <div class="status-offline"></div>
-                  <div class="recent-avatar"><img src="img/2.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Sadenur</div>
-                     <div class="recent-user-message">owwww! Nice picture..</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">2</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status-away"></div>
-                  <div class="recent-avatar"><img src="img/3.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Çikolata</div>
-                     <div class="recent-user-message">I like chocolate</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status"></div>
-                  <div class="recent-avatar"><img src="img/4.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Lokman Hekim</div>
-                     <div class="recent-user-message">Incredible performance man. Congra...</div>
-                  </div>
-               </div>
             </div>
             <div id="favourites" class="favourites">
                <div class="recent-user">
@@ -124,39 +97,6 @@
                      <div class="count">9+</div>
                   </div>
                </div>
-               <div class="recent-user">
-                  <div class="status-offline"></div>
-                  <div class="recent-avatar"><img src="img/3.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Steve</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">9+</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status-away"></div>
-                  <div class="recent-avatar"><img src="img/4.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">ShadowMan</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">1+</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status"></div>
-                  <div class="recent-avatar"><img src="img/1.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Marvel</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">5+</div>
-                  </div>
-               </div>
             </div>
             <div id="online" class="online">
                <div class="recent-user">
@@ -168,39 +108,6 @@
                   </div>
                   <div class="message-count">
                      <div class="count">8+</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status-offline"></div>
-                  <div class="recent-avatar"><img src="img/4.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Mustafa</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">5+</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status-away"></div>
-                  <div class="recent-avatar"><img src="img/5.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Tevfik</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">7+</div>
-                  </div>
-               </div>
-               <div class="recent-user">
-                  <div class="status"></div>
-                  <div class="recent-avatar"><img src="img/3.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Tuncay</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">3+</div>
                   </div>
                </div>
             </div>
@@ -251,56 +158,6 @@
                      <div class="message-time">10:11</div>
                   </div>
                </div>
-               <!--Image Message FINISHED-->
-               <!--Audio Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body friend">
-                     <div class="message-text">
-                        <div class="musicAudio"><audio id="audio-player" src="mp3/Drake-OneDanceft.WizkidKyla(Lyric).mp3" type="audio/mp3" controls="controls"></audio></div>
-                     </div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-               <!--Audio Message FINISHED-->
-               <!--Video Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body you_">
-                     <div class="message-text">
-                        <div class="VideoMessage">
-                           <video width="100%" height="200" src="media/echo-hereweare.mp4" type="video/mp4" id="player1" class="mediaVideo" poster="media/echo-hereweare.jpg" controls="controls" preload="none"></video>
-                        </div>
-                     </div>
-                     <div class="message-text">
-                        Whatch this vieo body <img src="css/sticker/faceB-fs10.png" class="sticker" /> I like it so much i think you like it tooo <img src="css/emoji/face-w15.png" class="emoji" />
-                     </div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-               <!--Video Message FINISHED-->
-               <!--Text Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body you_">
-                     <div class="message-text">Hi i am good how are you too ?</div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-               <!--Text Message FINISHED-->
-               <!--Text Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body you_">
-                     <div class="message-text">Nice picture thanks for sharing ! <img src="css/emoji/face-w1.png" class="emoji" /></div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-               <!--Text Message FINISHED-->
-               <!--Text Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body friend">
-                     <div class="message-text">No problem bro, i am happy to you like it. I found it from tumblr it is so cool <img src="css/emoji/face-w16.png" class="emoji" /></div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-               <!--Text Message FINISHED-->
             </div>
          </div>
          <!--Conversation FINISHED-->
