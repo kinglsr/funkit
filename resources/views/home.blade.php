@@ -8,7 +8,9 @@
    <title>Funkit || Complete Chat Application</title>
    <link rel="stylesheet" type="text/css" href="css/chat.css" media="screen,projection" />
    <link rel="stylesheet" type="text/css" href="css/hover.css" />
+   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="js/audio.js"></script>
    <script type="text/javascript" src="js/materialize.min.js"></script>
    <script type="text/javascript" src="js/elastic.min.js"></script>
@@ -33,9 +35,9 @@
          <div class="panel-header panel-flex">
             <div class="panel-menu-list">
                <div class="panel-menu">
-                  <!-- <a href="index.html"> -->
+                  <a href="index.html">
                      <div class="p-menu-item panel-home"></div>
-                  <!-- </a> -->
+                  </a>
                </div>
                <div class="panel-menu">
                   <a href="notifications.html">
