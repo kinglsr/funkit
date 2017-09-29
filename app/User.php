@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use App\User;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -26,4 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * to get all friends of particular user
+     * @param  integer $userId
+     * @return array        
+     */
+    public static function getAllFriends($userId = null) {
+        $users = User::where('users.id','!=',$userId)
+                ->select('id','name')
+                ->get();
+
+        return $users;
+    }
 }

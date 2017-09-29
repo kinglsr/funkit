@@ -1,28 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
    <meta name="theme-color" content="#8e24aa">
    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+   <meta name="csrf-token" content="{{ csrf_token() }}">
    <title>Funkit || Complete Chat Application</title>
    <link rel="stylesheet" type="text/css" href="css/chat.css" media="screen,projection" />
    <link rel="stylesheet" type="text/css" href="css/hover.css" />
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="js/audio.js"></script>
-   <script type="text/javascript" src="js/materialize.min.js"></script>
-   <script type="text/javascript" src="js/elastic.min.js"></script>
-   <script type="text/javascript" src="js/main.js"></script>
-   <script type="text/javascript">
-   </script>
 
 </head>
 
 <body style="background-color:#0094EA;">
-
-   <div class="chat-container">
+   <div class="chat-container" id="app">
+      <!--some hidden constants starts-->
+      <input type="hidden" value="{{ url('/') }}" id="baseUrl"/>
+      <!--some hidden constants ends-->
       <!--Chat left FINISHED-->
       <div class="chat-left fixed" id="slide-out">
          <!--Panel LOGO STARTED-->
@@ -74,45 +68,8 @@
          <!--Panel Tab menu FINISHED-->
          <!--Panel Tabs STARTED-->
          <div class="panel-col" id="chat-tabs">
-            <div id="recents" class="recents">
-               <div class="recent-user">
-                  <div class="status"></div>
-                  <div class="recent-avatar"><img src="img/1.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Asuman</div>
-                     <div class="recent-user-message">Are you still on there</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">9+</div>
-                  </div>
-               </div>
-            </div>
-            <div id="favourites" class="favourites">
-               <div class="recent-user">
-                  <div class="status"></div>
-                  <div class="recent-avatar"><img src="img/5.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">John Doe</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">9+</div>
-                  </div>
-               </div>
-            </div>
-            <div id="online" class="online">
-               <div class="recent-user">
-                  <div class="status"></div>
-                  <div class="recent-avatar"><img src="img/2.jpg" class="a0uk" /></div>
-                  <div class="chat-name-recent-message">
-                     <div class="recent-user-name">Kentaki</div>
-                     <div class="recent-user-message">This is test message from this user</div>
-                  </div>
-                  <div class="message-count">
-                     <div class="count">8+</div>
-                  </div>
-               </div>
-            </div>
+            <!-- All friends (ChatUser component) -->
+            <user-log v-on:getcurrentuser="getCurrentUser"></user-log>
          </div>
          <!--Panel Tabs FINISHED-->
       </div>
@@ -120,16 +77,8 @@
       <div class="chat-right">
          <!--Chat HEADER STARTED-->
          <div class="panel-header-chat">
-            <!--Current Username Avatar Writing Status STARTED-->
-            <div class="panel-chat-user">
-               <div class="panel-chat-mobile-btn" data-activates="slide-out"></div>
-               <div class="panel-chat-avatar"><img src="img/3.jpg" class="a0uk" /></div>
-               <div class="panel-chat-username-status">
-                  <div class="panel-username">Mustafa Öztürk</div>
-                  <div class="panel-status">Last seen today 17:43</div>
-               </div>
-            </div>
-            <!--Current Username Avatar Writing Status FINISHED-->
+            <!--to get all information of current user (CurentUser component)-->
+            <current-user :selecteduser="selecteduser"></current-user>
             <!--Current Chat Controls STARTED-->
             <div class="panel-chat-controls">
                <div class="panel-control-col">
@@ -144,25 +93,11 @@
          <!--Chat HEADER FINISHED-->
          <!--Conversation STARTED-->
          <div class="messages--wrap">
-            <div class="messages-body">
-               <!--Text Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body friend">
-                     <div class="message-text">Hi, Mustafa how are you?</div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-               <!--Text Message FINISHED-->
-               <!--Image Message STARTED-->
-               <div class="msg">
-                  <div class="message-reply-body friend">
-                     <div class="message-text"><img src="img/4.gif" /></div>
-                     <div class="message-time">10:11</div>
-                  </div>
-               </div>
-            </div>
-         </div>
+            <!-- All chat messsages here (ChatLog Component) -->
+            <chat-log :messages="messages"></chat-log>
+        </div>
          <!--Conversation FINISHED-->
+
          <!--Message Text Box STARTED-->
          <div class="message-textbox">
             <div class="message-box">
@@ -208,3 +143,12 @@
 </body>
 
 </html>
+
+
+<script src="js/app.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/audio.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/elastic.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
