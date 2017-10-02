@@ -3,7 +3,7 @@
     <div class="msg">
       <div class="message-reply-body friend">
          <div class="message-text">{{ message.message }}</div>
-         <div class="message-time">10:11</div>
+         <div class="message-time">{{ formatTime(message.created) }}</div>
       </div>
     </div>
     <!--Text Message FINISHED-->
@@ -15,6 +15,14 @@
         props:['message'],
         mounted() {
             // console.log(this.message);
+        },
+        methods: {
+          // to format time
+          formatTime (time) {
+            let previousTime = moment(time,'YYYY-MM-DD HH:mm:ss').format('x');
+            let timeDifference = moment(previousTime,'x').fromNow();
+            return timeDifference;
+          }
         }
     }
 </script>

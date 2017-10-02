@@ -23,32 +23,69 @@ let config = {
   
 let fireBase = firebase.initializeApp(config);
 let db = fireBase.database();
-let messageRef = db.ref('messages');
+let messageRef = db.ref('messages'); // to store sender information
 const app = new Vue({
     el: '#app',
     data: {
     	messages:[],
     	newMessage:{
-    		message:''
+    		message:'',
+    		created:'',
+    		sender_user_id:'',
+    		type:1,
+    		status:1
     	},
     	selecteduser:{
     		name:'',
     		userId:''
-    	}
+    	},
+        authUser:{userId:'',userName:''},
+        baseUrl:$("#baseUrl").val()
+
     },
     methods:{
     	getCurrentUser(user) {
     		this.selecteduser.name = user.name;
     		this.selecteduser.userId = user.userId;
-    	}
+    	},
+    	addMessage(message) {
+    		// // add message to firebase database
+    		let created = moment().format('YYYY-MM-DD HH:mm:ss');
+    		this.newMessage.message = message.message;
+    		this.newMessage.created = created;
+    		this.newMessage.sender_user_id = this.authUser.userId;
+    		// let postData = {5:{4:this.newMessage}};
+    		let insertData = messageRef.push(this.newMessage);
+
+   //  		var insertedKey = insertData.getKey();
+   //  		var child = messageRef.child(insertedKey);
+			// child.once('value', function(snapshot) {
+			//   messageRef.child('223').set(snapshot.val());
+			//   child.remove();
+			// });
+
+    		// var insertData = firebase.database().ref().push(newData);
+ 			// var insertedKey = insertData.getKey(); // last inserted key
+    	},
+    	updateAuthUser() {
+    		// get auth user
+	        axios.get(this.baseUrl+'/authUser').then( response=> {
+	            let user = response.data;
+	            this.authUser.userName = user.name;
+	            this.authUser.userId = user.id;
+	        });
+    	},
+    	loadMessage() {
+    		
+		}
     },
     firebase: {
     	messages:messageRef
     },
     mounted() {
-    	// this.newMessage.message = "So easy.";
-    	// messageRef.push(this.newMessage);
-
+    	this.updateAuthUser();
+    	this.loadMessage(this.authUser.userId);
+    	console.log(this.messages);
     }
 });
 

@@ -100,13 +100,7 @@
 
          <!--Message Text Box STARTED-->
          <div class="message-textbox">
-            <div class="message-box">
-               <div class="smile-button"></div>
-               <div class="reply-textBox">
-                  <textarea name="reply" class="reply" placeholder="Reply message..."></textarea>
-               </div>
-               <div class="reply-btn"></div>
-            </div>
+            <chat-composer v-on:messagesent="addMessage" :selecteduser="selecteduser"></chat-composer>
          </div>
          <!--Message Text Box FINISHED-->
       </div>
@@ -151,4 +145,5 @@
 <script type="text/javascript" src="js/audio.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/elastic.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
