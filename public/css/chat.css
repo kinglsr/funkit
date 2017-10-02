@@ -1084,6 +1084,10 @@ ul:not(.browser-default) {
    background-color: #2396D8;
 }
 
+.recent-user.active {
+   background-color: #2396D8;
+}
+
 .recent-avatar {
    float: left;
    border-radius: 50%;

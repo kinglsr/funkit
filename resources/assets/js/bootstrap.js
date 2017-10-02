@@ -1,6 +1,14 @@
+import Vue from 'vue';
 
-window._ = require('lodash');
+import VueFire from 'vuefire';
 
+import axios from 'axios';
+
+
+
+window.Vue = Vue;
+window.axios = axios;
+Vue.use(VueFire);
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This

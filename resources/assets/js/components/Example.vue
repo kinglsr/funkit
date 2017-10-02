@@ -6,7 +6,11 @@
                     <div class="panel-heading">Example Component</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                       <tr  v-for="message in messages">
+                            <td>
+                            {{ message.message }}
+                            </td>
+                            </tr>
                     </div>
                 </div>
             </div>
@@ -18,6 +22,16 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+        data() {
+        return {
+            messages: [
+                  { message: 'Foo' },
+                  { message: 'Bar' },
+                  { message: 'Manohar' },
+                  { message: 'Khadka' }
+                ]
+            }
         }
     }
 </script>
