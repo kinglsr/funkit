@@ -965,6 +965,19 @@ ul:not(.browser-default) {
    will-change: left, right;
 }
 
+.tabs-main .indicator {
+   position: absolute;
+   bottom: 0;
+   height: 0px !important; 
+   background-color: rgba(255, 255, 255, 0.39);
+   will-change: left, right;
+}
+.tabs-main {
+  margin-left: 15%;
+}
+.tabs-main .tab {
+  width: 25%;
+}
 .tabs-post {
    position: relative;
    width: 100%;
@@ -987,7 +1000,9 @@ ul:not(.browser-default) {
    background-color: transparent;
    color: #ffffff;
 }
-
+.tabs-main .tab a.active {
+   border-bottom: 1px solid #bfc4c7;
+}
 .tabs-post .tab a {
    color: #ffffff;
    display: block;
@@ -1021,9 +1036,9 @@ ul:not(.browser-default) {
 }
 
 #chat-tabs {
-   position: absolute;
+   /*position: absolute;*/
    width: 100%;
-   padding-top: 5px;
+   padding-top: 10px;
    padding-bottom: 5px;
    bottom: 0;
    top: 214px;
@@ -3434,3 +3449,10 @@ div.mejs-speed-button {
 
 
 /*Mobile Screens FINISHED*/
+
+.panel-header-ui ul {
+  padding-left: 20%;
+}
+.nav>li>a {
+    padding: 5px 10px !important;
+}

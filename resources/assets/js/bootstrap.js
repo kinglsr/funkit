@@ -2,6 +2,8 @@ import Vue from 'vue';
 
 import VueFire from 'vuefire';
 
+import VueRouter from 'vue-router';
+
 import axios from 'axios';
 
 
@@ -9,6 +11,7 @@ import axios from 'axios';
 window.Vue = Vue;
 window.axios = axios;
 Vue.use(VueFire);
+Vue.use(VueRouter);
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
