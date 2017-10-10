@@ -2,8 +2,12 @@ import VueRouter from 'vue-router';
 
 let routes = [
 	{
-		path:'#example',
-		component:require('./components/Example')
+		path:'/status',
+		component:require('./components/Status')
+	},
+	{
+		path:'/message',
+		component:require('./components/Message')
 	}
 ];
 

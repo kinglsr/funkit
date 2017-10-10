@@ -759,7 +759,6 @@ position:relative;
    border-top-right-radius: 3px;
    border-bottom-right-radius: 3px;
 }
-
 .panel-header {
    padding: 25px 0px 0px 0px;
    -webkit-box-pack: end;
@@ -3455,4 +3454,22 @@ div.mejs-speed-button {
 }
 .nav>li>a {
     padding: 5px 10px !important;
+}
+
+.message-wrap-status {
+  top:0px !important;
+  bottom: 0px !important;
+  background-color: #e9ebee;
+}
+.row {
+  margin-right:0px !important;
+  margin-left:0px !important;
+}
+.portlet {
+  margin-top: 10px !important;
+  margin-bottom: 0px !important;
+}
+
+.portlet.box.grey>.portlet-title, .portlet.grey, .portlet>.portlet-body.grey {
+  background-color: #dbd9d9 !important;
 }

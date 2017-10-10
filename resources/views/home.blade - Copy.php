@@ -70,8 +70,7 @@
          <!--Conversation STARTED-->
          <div class="messages--wrap">
             <!-- All chat messsages here (ChatLog Component) -->
-            <!-- <chat-log :messages="messages"></chat-log> -->
-            <router-view></router-view>
+            <chat-log :messages="messages"></chat-log>
         </div>
          <!--Conversation FINISHED-->
 
