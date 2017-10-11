@@ -10,7 +10,7 @@
    <link rel="stylesheet" type="text/css" href="css/hover.css" />
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
    <link href="css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
-   <link href="css/font-awesome.min" rel="stylesheet" id="style_components" type="text/css" />
+   <link href="css/font-awesome.min.css" rel="stylesheet" id="style_components" type="text/css" />
 </head>
 <style>
 .portlet.box.green {
@@ -24,6 +24,9 @@
 }
 .portlet.light>.portlet-title>.actions {
     padding: 6px 4px 14px !important;
+}
+hr, p {
+    margin: 12px 0 !important;
 }
 </style>
 <body style="background-color:#0094EA;">

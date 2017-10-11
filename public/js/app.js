@@ -54493,435 +54493,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -54950,7 +54521,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "messages--wrap message-wrap-status" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "portlet box grey" }, [
+          _c("div", { staticClass: "portlet light bordered" }, [
             _c("div", { staticClass: "portlet-title" }, [
               _c("div", { staticClass: "caption" }, [
                 _c("i", {
@@ -54979,8 +54550,8 @@ var staticRenderFns = [
                     attrs: { type: "submit" }
                   },
                   [
-                    _c("i", { staticClass: "fa fa-file-text-o" }),
-                    _vm._v(" File")
+                    _c("i", { staticClass: "fa fa-location-arrow" }),
+                    _vm._v(" Location")
                   ]
                 ),
                 _vm._v(" "),
@@ -54993,17 +54564,9 @@ var staticRenderFns = [
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm green",
-                    attrs: { type: "submit" }
-                  },
-                  [
-                    _c("i", { staticClass: "fa fa-plus" }),
-                    _vm._v(" Upload Status")
-                  ]
-                )
+                _c("div", { staticClass: "portlet-input input-inline" }, [
+                  _c("div", { staticClass: "input-group" })
+                ])
               ])
             ]),
             _vm._v(" "),
@@ -55013,11 +54576,25 @@ var staticRenderFns = [
                   _c("img", { attrs: { src: "img/avatar1.jpg" } })
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-11" }, [
+                _c("div", { staticClass: "col-md-9" }, [
                   _c("textarea", {
                     staticClass: "form-control",
                     attrs: { rows: "1", placeholder: "What's on your mind?" }
                   })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-2" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-sm btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _c("i", { staticClass: "fa fa-tick" }),
+                      _vm._v(" Upload Status")
+                    ]
+                  )
                 ])
               ])
             ])
@@ -55061,253 +54638,123 @@ var staticRenderFns = [
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "mt-comment-details" }, [
-                            _c("div", { staticClass: "col-md-1" }, [
-                              _c("img", {
-                                attrs: {
-                                  src: "img/avatar1.jpg",
-                                  width: "35px",
-                                  height: "35px"
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-md-10" }, [
-                              _c("textarea", {
-                                staticClass: "form-control",
-                                attrs: {
-                                  placeholder: "Write your comment..",
-                                  rows: "1"
-                                }
-                              })
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane",
-                    attrs: { id: "portlet_comments_2" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar4.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _c("span", [
+                                  _c("a", [
+                                    _c("i", {
+                                      staticClass: "fa fa-thumbs-o-up"
+                                    }),
+                                    _vm._v(" Like")
+                                  ])
+                                ]),
+                                _vm._v("   "),
+                                _c("span", [
+                                  _c("a", [
+                                    _c("i", { staticClass: "fa fa-comment-o" }),
+                                    _vm._v(" Comment")
+                                  ])
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar8.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted by. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
+                            _c("hr"),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-12" }, [
+                                _c("span", [
+                                  _c("i", { staticClass: "fa fa-thumbs-o-up" }),
+                                  _vm._v(" Manohar Khadka, Saru Oli and "),
+                                  _c("a", [_vm._v("100 others")]),
+                                  _vm._v(" like this.")
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Natasha Kim")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("19 Dec,09:50 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
+                            _c("hr"),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar1.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("span", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-author" },
+                                    [_c("strong", [_vm._v("Manohar Khadka")])]
+                                  ),
+                                  _vm._v(" Yeah..You really got points.")
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Sebastian Davidson")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("10 Dec, 09:20 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The standard chunk of Lorem Ipsum used since the 1500s "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar3.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("span", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-author" },
+                                    [_c("strong", [_vm._v("John Cena")])]
+                                  ),
+                                  _vm._v(" I love WWE.")
+                                ])
+                              ])
+                            ]),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
+                            _c("hr"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar1.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("div", { staticClass: "input-icon right" }, [
+                                  _c("i", { staticClass: "fa fa-check" }),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    staticClass: "form-control input-circle",
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Write your comment.."
+                                    }
+                                  })
                                 ])
                               ])
                             ])
@@ -55340,31 +54787,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "mt-comment-body" }, [
                           _c("div", { staticClass: "mt-comment-info" }, [
                             _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
+                              _vm._v("Manohar Khadka")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "mt-comment-date" }, [
@@ -55373,866 +54796,158 @@ var staticRenderFns = [
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted. "
-                            )
+                            _vm._v(" Having dinner with special one.")
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-rejected"
-                              },
-                              [_vm._v("Rejected")]
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane",
-                    attrs: { id: "portlet_comments_2" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar4.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _c("span", [
+                                  _c("a", [
+                                    _c("i", {
+                                      staticClass: "fa fa-thumbs-o-up"
+                                    }),
+                                    _vm._v(" Like")
+                                  ])
+                                ]),
+                                _vm._v("   "),
+                                _c("span", [
+                                  _c("a", [
+                                    _c("i", { staticClass: "fa fa-comment-o" }),
+                                    _vm._v(" Comment")
+                                  ])
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar8.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted by. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
+                            _c("hr"),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-12" }, [
+                                _c("span", [
+                                  _c("i", { staticClass: "fa fa-thumbs-o-up" }),
+                                  _vm._v(" Manohar Khadka, Saru Oli and "),
+                                  _c("a", [_vm._v("100 others")]),
+                                  _vm._v(" like this.")
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Natasha Kim")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("19 Dec,09:50 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
+                            _c("hr"),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar7.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("span", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-author" },
+                                    [
+                                      _c("strong", [
+                                        _vm._v("Larisa Maskalyova")
+                                      ])
+                                    ]
+                                  ),
+                                  _vm._v(" Good Lock bro..Have fun.")
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Sebastian Davidson")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("10 Dec, 09:20 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The standard chunk of Lorem Ipsum used since the 1500s "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar8.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("span", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-author" },
+                                    [_c("strong", [_vm._v("Aliza Alizaa")])]
+                                  ),
+                                  _vm._v(" I love dinner with special one.")
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-xs-12 col-sm-12" }, [
-          _c("div", { staticClass: "portlet light bordered" }, [
-            _c("div", { staticClass: "portlet-body" }, [
-              _c("div", { staticClass: "tab-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane active",
-                    attrs: { id: "portlet_comments_1" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-rejected"
-                              },
-                              [_vm._v("Rejected")]
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane",
-                    attrs: { id: "portlet_comments_2" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar4.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar9.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("span", [
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-author" },
+                                    [_c("strong", [_vm._v("Funkit User.")])]
+                                  ),
+                                  _vm._v(" Aichhh.")
                                 ])
                               ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar8.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
                             ]),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted by. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
+                            _c("hr"),
                             _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-1 mt-comment-img" },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      src: "img/avatar1.jpg",
+                                      width: "32px",
+                                      height: "32px"
+                                    }
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Natasha Kim")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("19 Dec,09:50 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Sebastian Davidson")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("10 Dec, 09:20 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The standard chunk of Lorem Ipsum used since the 1500s "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "portlet light bordered" }, [
-            _c("div", { staticClass: "portlet-body" }, [
-              _c("div", { staticClass: "tab-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane active",
-                    attrs: { id: "portlet_comments_1" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-rejected"
-                              },
-                              [_vm._v("Rejected")]
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane",
-                    attrs: { id: "portlet_comments_2" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar4.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Michael Baker")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("26 Feb, 10:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar8.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted by. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Natasha Kim")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("19 Dec,09:50 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Sebastian Davidson")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("10 Dec, 09:20 AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " The standard chunk of Lorem Ipsum used since the 1500s "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass:
-                                  "mt-comment-status mt-comment-status-approved"
-                              },
-                              [_vm._v("Approved")]
-                            ),
-                            _vm._v(" "),
-                            _c("ul", { staticClass: "mt-comment-actions" }, [
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Quick Edit")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("View")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("li", [
-                                _c("a", { attrs: { href: "#" } }, [
-                                  _vm._v("Delete")
+                              _c("div", { staticClass: "col-md-11" }, [
+                                _c("div", { staticClass: "input-icon right" }, [
+                                  _c("i", { staticClass: "fa fa-check" }),
+                                  _vm._v(" "),
+                                  _c("input", {
+                                    staticClass: "form-control input-circle",
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Write your comment.."
+                                    }
+                                  })
                                 ])
                               ])
                             ])
