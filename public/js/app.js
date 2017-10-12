@@ -54493,6 +54493,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -54695,7 +54699,28 @@ var staticRenderFns = [
                                     { staticClass: "mt-comment-author" },
                                     [_c("strong", [_vm._v("Manohar Khadka")])]
                                   ),
-                                  _vm._v(" Yeah..You really got points.")
+                                  _vm._v(" Yeah..You really got points."),
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-text" },
+                                    [_vm._v("  2 hours ago ")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("br"),
+                                  _c("span", [
+                                    _c("a", [
+                                      _c("i", {
+                                        staticClass: "fa fa-thumbs-o-up"
+                                      }),
+                                      _vm._v(" Like ")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      { staticClass: "mt-comment-text" },
+                                      [_vm._v(" (2) ")]
+                                    )
+                                  ])
                                 ])
                               ])
                             ]),
@@ -54722,7 +54747,28 @@ var staticRenderFns = [
                                     { staticClass: "mt-comment-author" },
                                     [_c("strong", [_vm._v("John Cena")])]
                                   ),
-                                  _vm._v(" I love WWE.")
+                                  _vm._v(" I love WWE. "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "mt-comment-text" },
+                                    [_vm._v("  20 min ago ")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("br"),
+                                  _c("span", [
+                                    _c("a", [
+                                      _c("i", {
+                                        staticClass: "fa fa-thumbs-o-up"
+                                      }),
+                                      _vm._v(" Like")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "span",
+                                      { staticClass: "mt-comment-text" },
+                                      [_vm._v(" (4) ")]
+                                    )
+                                  ])
                                 ])
                               ])
                             ]),

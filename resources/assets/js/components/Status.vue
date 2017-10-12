@@ -72,7 +72,9 @@
                                             <img src="img/avatar1.jpg" width="32px" height="32px">
                                         </div>
                                         <div class="col-md-11">
-                                            <span><span class="mt-comment-author"><strong>Manohar Khadka</strong></span> Yeah..You really got points.</span>
+                                            <span><span class="mt-comment-author"><strong>Manohar Khadka</strong></span> Yeah..You really got points.<span class="mt-comment-text"> &nbsp;2 hours ago </span>
+                                            <br><span><a><i class="fa fa-thumbs-o-up"></i> Like </a> <span class="mt-comment-text"> (2) </span></span>
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -80,7 +82,9 @@
                                             <img src="img/avatar3.jpg" width="32px" height="32px">
                                         </div>
                                         <div class="col-md-11">
-                                            <span><span class="mt-comment-author"><strong>John Cena</strong></span> I love WWE.</span>
+                                            <span><span class="mt-comment-author"><strong>John Cena</strong></span> I love WWE. <span class="mt-comment-text"> &nbsp;20 min ago </span>
+                                            <br><span><a><i class="fa fa-thumbs-o-up"></i> Like</a> <span class="mt-comment-text"> (4) </span></span>
+                                        </span>
                                         </div>
                                     </div>
                                     <hr>
