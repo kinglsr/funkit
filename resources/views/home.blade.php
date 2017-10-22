@@ -11,6 +11,7 @@
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
    <link href="css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
    <link href="css/font-awesome.min.css" rel="stylesheet" id="style_components" type="text/css" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" id="style_components" type="text/css" />
 </head>
 <style>
 .portlet.box.green {
@@ -70,7 +71,7 @@ hr, p {
       </div>
       <!--Chat left STARTED-->
       <div class="chat-right">
-        <router-view :selecteduser="selecteduser" :messages="messages" :messagesent="messagesent"></router-view>
+        <router-view :selecteduser="selecteduser" :messages="messages" :auth_user="auth_user" :firebase="firebase"></router-view>
       </div>
    </div>
 
@@ -114,6 +115,7 @@ hr, p {
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/elastic.min.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 <script type="text/javascript">

@@ -18013,8 +18013,8 @@ var config = {
 };
 
 var fireBase = __WEBPACK_IMPORTED_MODULE_1_firebase___default.a.initializeApp(config);
-var db = fireBase.database();
-var messageRef = db.ref('messages'); // to store sender information
+var db_ref = fireBase.database();
+var messageRef = db_ref.ref('messages'); // to store sender information
 var app = new Vue({
     el: '#app',
     data: {
@@ -18030,8 +18030,9 @@ var app = new Vue({
             name: '',
             userId: ''
         },
-        authUser: { userId: '', userName: '' },
-        baseUrl: $("#baseUrl").val()
+        auth_user: { userId: '', userName: '' },
+        baseUrl: $("#baseUrl").val(),
+        firebase: fireBase
 
     },
     methods: {
@@ -18044,7 +18045,7 @@ var app = new Vue({
             var created = moment().format('YYYY-MM-DD HH:mm:ss');
             this.newMessage.message = message.message;
             this.newMessage.created = created;
-            this.newMessage.sender_user_id = this.authUser.userId;
+            this.newMessage.sender_user_id = this.auth_user.userId;
             // let postData = {5:{4:this.newMessage}};
             var insertData = messageRef.push(this.newMessage);
 
@@ -18064,8 +18065,8 @@ var app = new Vue({
             // get auth user
             axios.get(this.baseUrl + '/authUser').then(function (response) {
                 var user = response.data;
-                _this.authUser.userName = user.name;
-                _this.authUser.userId = user.id;
+                _this.auth_user.userName = user.name;
+                _this.auth_user.userId = user.id;
             });
         },
         loadMessage: function loadMessage() {}
@@ -18076,8 +18077,7 @@ var app = new Vue({
     router: __WEBPACK_IMPORTED_MODULE_2__routes__["a" /* default */],
     mounted: function mounted() {
         this.updateAuthUser();
-        this.loadMessage(this.authUser.userId);
-        console.log(this.messages);
+        this.loadMessage(this.auth_user.userId);
     }
 });
 
@@ -54416,94 +54416,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
+var statusRef = '';
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['auth_user', 'firebase'],
     mounted: function mounted() {
-        console.log('Component mounted.');
+        // db_ref.ref('status').once('value').then(function(snapshot) {
+        //     console.log(snapshot.val());              
+        // });
+    },
+
+    firebase: function firebase() {
+        var db_ref = this.firebase.database();
+        statusRef = db_ref.ref("status");
+        return {
+            statusList: statusRef
+        };
     },
     data: function data() {
-        return {};
+        return {
+            statusText: '',
+            statusRef: '',
+            newStatus: {
+                statusText: '',
+                created: '',
+                userId: 5,
+                location: ''
+            },
+            statusList: [],
+            newComment: {
+                author: '',
+                created: '',
+                comment: ''
+            },
+            commentText: {
+                parent_id: []
+            }
+        };
+    },
+
+    methods: {
+        uploadStatus: function uploadStatus() {
+            var created = moment().format('YYYY-MM-DD HH:mm:ss');
+            this.newStatus.statusText = this.statusText;
+            this.newStatus.created = created;
+            var insertData = statusRef.push().setWithPriority(this.newStatus, 0 - Date.now());
+            this.statusText = "";
+            toastr.success("Status uploaded successfully.");
+        },
+        postComment: function postComment(statusKey) {
+            var comment = this.commentText.parent_id[statusKey];
+            if (comment.length > 0) {
+                var created = moment().format('YYYY-MM-DD HH:mm:ss');
+                this.newComment.comment = comment;
+                this.newComment.created = created;
+                this.newComment.author = this.auth_user.userName;
+                var statusCommentsRef = statusRef.child(statusKey).child("comments");
+                var insertData = statusCommentsRef.push(this.newComment);
+                this.commentText.parent_id[statusKey] = "";
+            }
+        },
+        formatDate: function formatDate(time) {
+            var previousTime = moment(time, 'YYYY-MM-DD HH:mm:ss').format('x');
+            var timeDifference = moment(previousTime, 'x').fromNow();
+            return timeDifference;
+        }
     }
 });
 
@@ -54515,75 +54492,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "messages--wrap message-wrap-status" }, [
+  return _c(
+    "div",
+    { staticClass: "messages--wrap message-wrap-status" },
+    [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-12" }, [
           _c("div", { staticClass: "portlet light bordered" }, [
-            _c("div", { staticClass: "portlet-title" }, [
-              _c("div", { staticClass: "caption" }, [
-                _c("i", {
-                  staticClass: "icon-paper-plane font-yellow-casablanca"
-                }),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "caption-subject bold font-yellow-casablanca uppercase"
-                  },
-                  [_vm._v(" Status ")]
-                ),
-                _vm._v(" "),
-                _c("span", { staticClass: "caption-helper" }, [
-                  _vm._v("post new status...")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "actions" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-sm grey-cascade",
-                    attrs: { type: "submit" }
-                  },
-                  [
-                    _c("i", { staticClass: "fa fa-location-arrow" }),
-                    _vm._v(" Location")
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "btn btn-sm dark", attrs: { type: "submit" } },
-                  [
-                    _c("i", { staticClass: "fa fa-file-text-o" }),
-                    _vm._v(" Image / Video")
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "portlet-input input-inline" }, [
-                  _c("div", { staticClass: "input-group" })
-                ])
-              ])
-            ]),
+            _vm._m(0),
             _vm._v(" "),
             _c("div", { staticClass: "portlet-body" }, [
               _c("div", { staticClass: "form-group form-md-line-input" }, [
-                _c("div", { staticClass: "col-md-1" }, [
-                  _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                ]),
+                _vm._m(1),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-9" }, [
                   _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.statusText,
+                        expression: "statusText"
+                      }
+                    ],
                     staticClass: "form-control",
-                    attrs: { rows: "1", placeholder: "What's on your mind?" }
+                    attrs: { rows: "1", placeholder: "What's on your mind?" },
+                    domProps: { value: _vm.statusText },
+                    on: {
+                      keyup: function($event) {
+                        if (
+                          !("button" in $event) &&
+                          _vm._k($event.keyCode, "enter", 13)
+                        ) {
+                          return null
+                        }
+                        _vm.uploadStatus($event)
+                      },
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.statusText = $event.target.value
+                      }
+                    }
                   })
                 ]),
                 _vm._v(" "),
@@ -54592,7 +54543,8 @@ var staticRenderFns = [
                     "button",
                     {
                       staticClass: "btn btn-sm btn-primary",
-                      attrs: { type: "submit" }
+                      attrs: { type: "submit" },
+                      on: { click: _vm.uploadStatus }
                     },
                     [
                       _c("i", { staticClass: "fa fa-tick" }),
@@ -54606,408 +54558,277 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12 col-xs-12 col-sm-12" }, [
-          _c("div", { staticClass: "portlet light bordered" }, [
-            _c("div", { staticClass: "portlet-body" }, [
-              _c("div", { staticClass: "tab-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane active",
-                    attrs: { id: "portlet_comments_1" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar6.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Larisa Maskalyova")
-                            ]),
+      _vm._l(_vm.statusList, function(status) {
+        return _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12 col-xs-12 col-sm-12" }, [
+            _c("div", { staticClass: "portlet light bordered" }, [
+              _c("div", { staticClass: "portlet-body" }, [
+                _c("div", { staticClass: "tab-content" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane active",
+                      attrs: { id: "portlet_comments_1" }
+                    },
+                    [
+                      _c("div", { staticClass: "mt-comments" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "mt-comment",
+                            attrs: { "status-key": status[".key"] }
+                          },
+                          [
+                            _vm._m(2, true),
                             _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(
-                              " It is a long established fact that a reader will be distracted. "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-5" }, [
-                                _c("span", [
-                                  _c("a", [
-                                    _c("i", {
-                                      staticClass: "fa fa-thumbs-o-up"
-                                    }),
-                                    _vm._v(" Like")
-                                  ])
-                                ]),
-                                _vm._v("   "),
-                                _c("span", [
-                                  _c("a", [
-                                    _c("i", { staticClass: "fa fa-comment-o" }),
-                                    _vm._v(" Comment")
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("hr"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-12" }, [
-                                _c("span", [
-                                  _c("i", { staticClass: "fa fa-thumbs-o-up" }),
-                                  _vm._v(" Manohar Khadka, Saru Oli and "),
-                                  _c("a", [_vm._v("100 others")]),
-                                  _vm._v(" like this.")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("hr"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar1.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("span", [
+                            _c(
+                              "div",
+                              { staticClass: "mt-comment-body" },
+                              [
+                                _c("div", { staticClass: "mt-comment-info" }, [
                                   _c(
                                     "span",
                                     { staticClass: "mt-comment-author" },
-                                    [_c("strong", [_vm._v("Manohar Khadka")])]
-                                  ),
-                                  _vm._v(" Yeah..You really got points."),
-                                  _c(
-                                    "span",
-                                    { staticClass: "mt-comment-text" },
-                                    [_vm._v("  2 hours ago ")]
+                                    [_vm._v(_vm._s(_vm.auth_user.userName))]
                                   ),
                                   _vm._v(" "),
-                                  _c("br"),
-                                  _c("span", [
-                                    _c("a", [
-                                      _c("i", {
-                                        staticClass: "fa fa-thumbs-o-up"
-                                      }),
-                                      _vm._v(" Like ")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticClass: "mt-comment-text" },
-                                      [_vm._v(" (2) ")]
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar3.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("span", [
                                   _c(
                                     "span",
-                                    { staticClass: "mt-comment-author" },
-                                    [_c("strong", [_vm._v("John Cena")])]
-                                  ),
-                                  _vm._v(" I love WWE. "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "mt-comment-text" },
-                                    [_vm._v("  20 min ago ")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("br"),
-                                  _c("span", [
-                                    _c("a", [
-                                      _c("i", {
-                                        staticClass: "fa fa-thumbs-o-up"
-                                      }),
-                                      _vm._v(" Like")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "span",
-                                      { staticClass: "mt-comment-text" },
-                                      [_vm._v(" (4) ")]
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("hr"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar1.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("div", { staticClass: "input-icon right" }, [
-                                  _c("i", { staticClass: "fa fa-check" }),
-                                  _vm._v(" "),
-                                  _c("input", {
-                                    staticClass: "form-control input-circle",
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Write your comment.."
-                                    }
-                                  })
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "portlet light bordered" }, [
-            _c("div", { staticClass: "portlet-body" }, [
-              _c("div", { staticClass: "tab-content" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "tab-pane active",
-                    attrs: { id: "portlet_comments_1" }
-                  },
-                  [
-                    _c("div", { staticClass: "mt-comments" }, [
-                      _c("div", { staticClass: "mt-comment" }, [
-                        _c("div", { staticClass: "mt-comment-img" }, [
-                          _c("img", { attrs: { src: "img/avatar1.jpg" } })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mt-comment-body" }, [
-                          _c("div", { staticClass: "mt-comment-info" }, [
-                            _c("span", { staticClass: "mt-comment-author" }, [
-                              _vm._v("Manohar Khadka")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "mt-comment-date" }, [
-                              _vm._v("12 Feb, 08:30AM")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-text" }, [
-                            _vm._v(" Having dinner with special one.")
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "mt-comment-details" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-5" }, [
-                                _c("span", [
-                                  _c("a", [
-                                    _c("i", {
-                                      staticClass: "fa fa-thumbs-o-up"
-                                    }),
-                                    _vm._v(" Like")
-                                  ])
-                                ]),
-                                _vm._v("   "),
-                                _c("span", [
-                                  _c("a", [
-                                    _c("i", { staticClass: "fa fa-comment-o" }),
-                                    _vm._v(" Comment")
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("hr"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-12" }, [
-                                _c("span", [
-                                  _c("i", { staticClass: "fa fa-thumbs-o-up" }),
-                                  _vm._v(" Manohar Khadka, Saru Oli and "),
-                                  _c("a", [_vm._v("100 others")]),
-                                  _vm._v(" like this.")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("hr"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar7.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("span", [
-                                  _c(
-                                    "span",
-                                    { staticClass: "mt-comment-author" },
+                                    { staticClass: "mt-comment-date" },
                                     [
-                                      _c("strong", [
-                                        _vm._v("Larisa Maskalyova")
+                                      _vm._v(
+                                        _vm._s(_vm.formatDate(status.created))
+                                      )
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "mt-comment-text" }, [
+                                  _vm._v(_vm._s(status.statusText))
+                                ]),
+                                _c("hr"),
+                                _vm._v(" "),
+                                _vm._l(status.comments, function(comment) {
+                                  return _c(
+                                    "div",
+                                    { staticClass: "comment-list" },
+                                    [
+                                      _c("div", { staticClass: "row" }, [
+                                        _vm._m(3, true),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "col-md-11" },
+                                          [
+                                            _c("span", [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "mt-comment-author"
+                                                },
+                                                [
+                                                  _c("strong", [
+                                                    _vm._v(
+                                                      _vm._s(comment.author)
+                                                    )
+                                                  ])
+                                                ]
+                                              ),
+                                              _vm._v(
+                                                " " + _vm._s(comment.comment)
+                                              ),
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass: "mt-comment-text"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "  " +
+                                                      _vm._s(
+                                                        _vm.formatDate(
+                                                          comment.created
+                                                        )
+                                                      ) +
+                                                      " "
+                                                  )
+                                                ]
+                                              )
+                                            ])
+                                          ]
+                                        )
                                       ])
                                     ]
-                                  ),
-                                  _vm._v(" Good Lock bro..Have fun.")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar8.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("span", [
-                                  _c(
-                                    "span",
-                                    { staticClass: "mt-comment-author" },
-                                    [_c("strong", [_vm._v("Aliza Alizaa")])]
-                                  ),
-                                  _vm._v(" I love dinner with special one.")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar9.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("span", [
-                                  _c(
-                                    "span",
-                                    { staticClass: "mt-comment-author" },
-                                    [_c("strong", [_vm._v("Funkit User.")])]
-                                  ),
-                                  _vm._v(" Aichhh.")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("hr"),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c(
-                                "div",
-                                { staticClass: "col-md-1 mt-comment-img" },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      src: "img/avatar1.jpg",
-                                      width: "32px",
-                                      height: "32px"
-                                    }
-                                  })
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-11" }, [
-                                _c("div", { staticClass: "input-icon right" }, [
-                                  _c("i", { staticClass: "fa fa-check" }),
+                                  )
+                                }),
+                                _vm._v(" "),
+                                status.comments ? _c("hr") : _vm._e(),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "row" }, [
+                                  _vm._m(4, true),
                                   _vm._v(" "),
-                                  _c("input", {
-                                    staticClass: "form-control input-circle",
-                                    attrs: {
-                                      type: "text",
-                                      placeholder: "Write your comment.."
-                                    }
-                                  })
+                                  _c("div", { staticClass: "col-md-11" }, [
+                                    _c(
+                                      "div",
+                                      { staticClass: "input-icon right" },
+                                      [
+                                        _c("i", { staticClass: "fa fa-check" }),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.commentText.parent_id[
+                                                  status[".key"]
+                                                ],
+                                              expression:
+                                                "commentText.parent_id[status['.key']]"
+                                            }
+                                          ],
+                                          staticClass:
+                                            "form-control input-circle",
+                                          attrs: {
+                                            type: "text",
+                                            placeholder: "Write your comment.."
+                                          },
+                                          domProps: {
+                                            value:
+                                              _vm.commentText.parent_id[
+                                                status[".key"]
+                                              ]
+                                          },
+                                          on: {
+                                            keyup: function($event) {
+                                              if (
+                                                !("button" in $event) &&
+                                                _vm._k(
+                                                  $event.keyCode,
+                                                  "enter",
+                                                  13
+                                                )
+                                              ) {
+                                                return null
+                                              }
+                                              _vm.postComment(status[".key"])
+                                            },
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.commentText.parent_id,
+                                                status[".key"],
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]
+                                    )
+                                  ])
                                 ])
-                              ])
-                            ])
-                          ])
-                        ])
+                              ],
+                              2
+                            )
+                          ]
+                        )
                       ])
-                    ])
-                  ]
-                )
+                    ]
+                  )
+                ])
               ])
             ])
           ])
         ])
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "portlet-title" }, [
+      _c("div", { staticClass: "caption" }, [
+        _c("i", { staticClass: "icon-paper-plane font-yellow-casablanca" }),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "caption-subject bold font-yellow-casablanca uppercase"
+          },
+          [_vm._v(" Status ")]
+        ),
+        _vm._v(" "),
+        _c("span", { staticClass: "caption-helper" }, [
+          _vm._v("post new status...")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "actions" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-sm grey-cascade", attrs: { type: "submit" } },
+          [
+            _c("i", { staticClass: "fa fa-location-arrow" }),
+            _vm._v(" Location")
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          { staticClass: "btn btn-sm dark", attrs: { type: "submit" } },
+          [
+            _c("i", { staticClass: "fa fa-file-text-o" }),
+            _vm._v(" Image / Video")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "portlet-input input-inline" }, [
+          _c("div", { staticClass: "input-group" })
+        ])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-1" }, [
+      _c("img", { attrs: { src: "img/avatar1.jpg" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-comment-img" }, [
+      _c("img", { attrs: { src: "img/avatar6.jpg" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-1 mt-comment-img" }, [
+      _c("img", {
+        attrs: { src: "img/avatar1.jpg", width: "32px", height: "32px" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-1 mt-comment-img" }, [
+      _c("img", {
+        attrs: { src: "img/avatar1.jpg", width: "32px", height: "32px" }
+      })
     ])
   }
 ]
@@ -55104,7 +54925,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['selecteduser', 'messages', 'addMessage'],
@@ -55146,12 +54966,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "message-textbox" },
-      [
-        _c("chat-composer", {
-          attrs: { selecteduser: _vm.selecteduser },
-          on: { messagesent: _vm.addMessage }
-        })
-      ],
+      [_c("chat-composer", { attrs: { selecteduser: _vm.selecteduser } })],
       1
     )
   ])

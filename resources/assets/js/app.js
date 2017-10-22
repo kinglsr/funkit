@@ -23,8 +23,8 @@ let config = {
   };
   
 let fireBase = firebase.initializeApp(config);
-let db = fireBase.database();
-let messageRef = db.ref('messages'); // to store sender information
+let db_ref = fireBase.database();
+let messageRef = db_ref.ref('messages'); // to store sender information
 const app = new Vue({
     el: '#app',
     data: {
@@ -40,8 +40,9 @@ const app = new Vue({
     		name:'',
     		userId:''
     	},
-        authUser:{userId:'',userName:''},
-        baseUrl:$("#baseUrl").val()
+        auth_user:{userId:'',userName:''},
+        baseUrl:$("#baseUrl").val(),
+        firebase:fireBase
 
     },
     methods:{
@@ -54,7 +55,7 @@ const app = new Vue({
     		let created = moment().format('YYYY-MM-DD HH:mm:ss');
     		this.newMessage.message = message.message;
     		this.newMessage.created = created;
-    		this.newMessage.sender_user_id = this.authUser.userId;
+    		this.newMessage.sender_user_id = this.auth_user.userId;
     		// let postData = {5:{4:this.newMessage}};
     		let insertData = messageRef.push(this.newMessage);
 
@@ -72,8 +73,8 @@ const app = new Vue({
     		// get auth user
 	        axios.get(this.baseUrl+'/authUser').then( response=> {
 	            let user = response.data;
-	            this.authUser.userName = user.name;
-	            this.authUser.userId = user.id;
+	            this.auth_user.userName = user.name;
+	            this.auth_user.userId = user.id;
 	        });
     	},
     	loadMessage() {
@@ -86,8 +87,7 @@ const app = new Vue({
     router,
     mounted() {
     	this.updateAuthUser();
-    	this.loadMessage(this.authUser.userId);
-    	console.log(this.messages);
+    	this.loadMessage(this.auth_user.userId);
     }
 });
 
