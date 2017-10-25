@@ -8,8 +8,9 @@
    <title>Funkit || Complete Chat Application</title>
    <link rel="stylesheet" type="text/css" href="css/chat.css" media="screen,projection" />
    <link rel="stylesheet" type="text/css" href="css/hover.css" />
-   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
    <link href="css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+   <link href="css/profile.min.css" rel="stylesheet" id="style_components" type="text/css" />
    <link href="css/font-awesome.min.css" rel="stylesheet" id="style_components" type="text/css" />
    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" id="style_components" type="text/css" />
 </head>
@@ -29,9 +30,30 @@
 hr, p {
     margin: 12px 0 !important;
 }
+.messages--wrap-profile {
+    padding-bottom: 10px;
+    top: 0px !important;
+    bottom: 0px !important;
+    background-color: #e9ebee;
+}
+.nav-profile-userpic img{
+    width: 15%;
+    height: 15%;
+    border-radius: 45% !important
+}
+.profile-nav {
+  background: #03a9f4;
+}
+.profile-nav-pills {
+  margin: 12%;
+}
+.profile-nav-pills li a {
+  color:#fff;
+  padding: 5px;
+  padding-right: 15px;
+}
 </style>
 <body style="background-color:#0094EA;">
-
    <div class="chat-container" id="app">
       <!--some hidden constants starts-->
       <input type="hidden" value="{{ url('/') }}" id="baseUrl"/>
@@ -40,7 +62,7 @@ hr, p {
       <div class="chat-left fixed" id="slide-out">
          <!--Panel LOGO STARTED-->
          <div class="panel-header">
-            <div class="panel-header-main-menu"></div>
+              <router-link to="/profile"><div class="panel-header-main-menu"></div></router-link>
          </div>
          
          <!--Panel LOGO FINISHED-->
