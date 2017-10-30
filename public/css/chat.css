@@ -3457,6 +3457,7 @@ div.mejs-speed-button {
 }
 
 .message-wrap-status {
+  padding-bottom: 10px;
   top:0px !important;
   bottom: 0px !important;
   background-color: #e9ebee;
