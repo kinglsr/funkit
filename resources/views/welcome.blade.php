@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="main-content">
-     <div class="wellCome">Well Come to FunKit !</div>
+     <div class="welCome">WelCome to FunKit !</div>
      <!--Login Container STARTED-->
      <form class="form-horizontal" method="POST" action="{{ route('login') }}">
             {{ csrf_field() }}
