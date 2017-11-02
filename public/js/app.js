@@ -56780,6 +56780,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['selecteduser'],
@@ -56831,40 +56840,64 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "message-box" }, [
-    _c("div", { staticClass: "smile-button" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "reply-textBox" }, [
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.messageText,
-            expression: "messageText"
-          }
-        ],
-        staticClass: "reply",
-        attrs: { name: "reply", placeholder: "Reply message..." },
-        domProps: { value: _vm.messageText },
-        on: {
-          keyup: function($event) {
-            if (!("button" in $event) && _vm._k($event.keyCode, "enter", 13)) {
-              return null
-            }
-            _vm.sendMessage($event)
-          },
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.messageText = $event.target.value
-          }
-        }
-      })
+  return _c("div", [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12 buttons-section" }, [
+        _c("div", {
+          staticClass: "reply-btn reply-btn- reply-btn-pink",
+          on: { click: _vm.sendMessage }
+        }),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "reply-btn reply-btn-red",
+          on: { click: _vm.sendMessage }
+        }),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "reply-btn reply-btn-orange",
+          on: { click: _vm.sendMessage }
+        })
+      ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "reply-btn", on: { click: _vm.sendMessage } })
+    _c("div", { staticClass: "message-box" }, [
+      _c("div", { staticClass: "smile-button" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "reply-textBox" }, [
+        _c("textarea", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.messageText,
+              expression: "messageText"
+            }
+          ],
+          staticClass: "reply",
+          attrs: { name: "reply", placeholder: "Reply message..." },
+          domProps: { value: _vm.messageText },
+          on: {
+            keyup: function($event) {
+              if (
+                !("button" in $event) &&
+                _vm._k($event.keyCode, "enter", 13)
+              ) {
+                return null
+              }
+              _vm.sendMessage($event)
+            },
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.messageText = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "reply-btn", on: { click: _vm.sendMessage } })
+    ])
   ])
 }
 var staticRenderFns = []

@@ -1348,7 +1348,7 @@ ul:not(.browser-default) {
    display: block;
    position: absolute;
    width: 100%;
-   bottom: 62px;
+   bottom: 100px;
    top: 71px;
    right: 0;
    overflow-y: scroll;
@@ -1438,6 +1438,7 @@ ul:not(.browser-default) {
 
 .reply-btn {
    position: relative;
+   float: left;
    width: 40px;
    height: 40px;
    border-radius: 50%;
@@ -1447,16 +1448,28 @@ ul:not(.browser-default) {
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 25px;
-   margin-right: 20px;
+   /*margin-right: 5px;*/
    padding: 8px;
    cursor: pointer;
    -webkit-transition: background-color .18s ease;
    transition: background-color .18s ease;
 }
 
+.reply-btn-red {
+  background-image: url(icons/send_red.png);
+}
+.reply-btn-pink {
+  background-image: url(icons/send_pink.png);
+}
+.reply-btn-orange {
+  background-image: url(icons/send_orange.png);
+}
+.buttons-section {
+  margin-left: 4.2%;
+}
 .reply-btn:hover {
    background-color: #F3F3F3;
-   background-image: url(icons/send.png);
+   /*background-image: url(icons/send.png);*/
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 25px;

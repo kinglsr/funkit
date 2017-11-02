@@ -54,7 +54,7 @@
                                             <span class="mt-comment-date">{{ formatDate(status.created) }}</span>
                                         </div>
                                         <div class="mt-comment-text">{{ status.statusText }}</div><hr>
-                                        <!-- <div class="mt-comment-details">
+                                        <!--  <div class="mt-comment-details">
                                             <div class="row">
                                                 <div class="col-md-5">
                                                     <span><a><i class="fa fa-thumbs-o-up"></i> Like</a></span> &nbsp;&nbsp;<span><a> <i class="fa fa-comment-o"></i> Comment</a></span>
@@ -66,7 +66,7 @@
                                                 <span> <i class="fa fa-thumbs-o-up"></i> Manohar Khadka, Saru Oli and <a>100 others</a> like this.</span>
                                                 </div>
                                             </div>
-                                            <hr>-->
+                                            <hr> -->
                                             <div class="comment-list" v-for="comment in status.comments">
                                                 <div class="row">
                                                     <div class="col-md-1 mt-comment-img">
