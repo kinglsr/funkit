@@ -54251,6 +54251,9 @@ var routes = [{
 	path: '/message',
 	component: __webpack_require__(192)
 }, {
+	path: '/',
+	component: __webpack_require__(192)
+}, {
 	path: '/profile',
 	component: __webpack_require__(195)
 }, {
@@ -56789,6 +56792,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['selecteduser'],
@@ -56844,19 +56848,23 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12 buttons-section" }, [
         _c("div", {
-          staticClass: "reply-btn reply-btn- reply-btn-pink",
-          on: { click: _vm.sendMessage }
+          staticClass: "reply-btn reply-btn-pink",
+          attrs: { title: "love" }
         }),
         _vm._v(" "),
         _c("div", {
           staticClass: "reply-btn reply-btn-red",
+          attrs: { title: "angry" },
           on: { click: _vm.sendMessage }
         }),
         _vm._v(" "),
         _c("div", {
           staticClass: "reply-btn reply-btn-orange",
+          attrs: { title: "annoying" },
           on: { click: _vm.sendMessage }
-        })
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "reply-btn", on: { click: _vm.sendMessage } })
       ])
     ]),
     _vm._v(" "),

@@ -10,6 +10,10 @@ let routes = [
 		component:require('./components/Message')
 	},
 	{
+		path:'/',
+		component:require('./components/Message')
+	},
+	{
 		path:'/profile',
 		component:require('./components/Profile')
 	},

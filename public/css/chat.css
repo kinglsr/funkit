@@ -1467,6 +1467,9 @@ ul:not(.browser-default) {
 .buttons-section {
   margin-left: 4.2%;
 }
+.buttons-section .reply-btn{
+  margin-left: 8px;
+}
 .reply-btn:hover {
    background-color: #F3F3F3;
    /*background-image: url(icons/send.png);*/

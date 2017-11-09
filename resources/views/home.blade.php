@@ -138,6 +138,7 @@ hr, p {
 <script type="text/javascript" src="js/elastic.min.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether-tooltip/1.2.0/js/tooltip.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
 <script type="text/javascript">
