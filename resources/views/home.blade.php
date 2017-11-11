@@ -8,11 +8,13 @@
    <title>Funkit || Complete Chat Application</title>
    <link rel="stylesheet" type="text/css" href="css/chat.css" media="screen,projection" />
    <link rel="stylesheet" type="text/css" href="css/hover.css" />
-   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+   <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
    <link href="css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
    <link href="css/profile.min.css" rel="stylesheet" id="style_components" type="text/css" />
    <link href="css/font-awesome.min.css" rel="stylesheet" id="style_components" type="text/css" />
    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/tooltipster.bundle.css" />
+
 </head>
 <style>
 .portlet.box.green {
@@ -63,7 +65,7 @@ hr, p {
          <!--Panel LOGO STARTED-->
          <div class="panel-header">
               <router-link to="/profile"><div class="panel-header-main-menu"></div></router-link>
-         </div>
+         </div>    
          
          <!--Panel LOGO FINISHED-->
          <!--Panel LEFT MENU STARTED-->
@@ -132,14 +134,14 @@ hr, p {
 
 <script src="js/app.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/audio.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/elastic.min.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether-tooltip/1.2.0/js/tooltip.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/tooltipster.bundle.min.js"></script>
 
 <script type="text/javascript">
 $(function(){
@@ -157,3 +159,8 @@ $(function(){
   });
 });  
 </script>
+<script>
+            $('.tooltip').tooltipster({
+              side:'top'
+            });
+    </script>

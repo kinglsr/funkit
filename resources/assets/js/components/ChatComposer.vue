@@ -2,10 +2,10 @@
     <div>
     <div class="row">
         <div class="col-md-12 buttons-section">
-            <div class="reply-btn reply-btn-pink" title="love"></div>
-            <div class="reply-btn reply-btn-red" title="angry" @click="sendMessage"></div>
-            <div class="reply-btn reply-btn-orange" title="annoying" @click="sendMessage"></div>
-            <div class="reply-btn" @click="sendMessage"></div>
+            <div class="reply-btn reply-btn-pink tooltip" title="love" @click="sendMessage"></div>
+            <div class="tooltip reply-btn reply-btn-red " title="angry" @click="sendMessage"></div>
+            <div class="tooltip reply-btn reply-btn-orange " title="annoying" @click="sendMessage"></div>
+            <div class="tooltip reply-btn " title="normal" @click="sendMessage"></div>
         </div>
     </div>
     <div class="message-box">
