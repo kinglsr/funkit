@@ -3495,3 +3495,32 @@ div.mejs-speed-button {
   opacity: 1 !important;
   position: relative !important;
 }
+.left-footer {
+  position: absolute;
+  bottom: 0px;
+  background: #548eaa;
+  width: 100%;
+}
+.left-footer ul {
+  margin-left: 10%;
+}
+.left-footer ul li {
+  float: left;
+  padding: 1%;
+  padding-right: 8%; 
+}
+.left-footer ul a {
+  color: #ffffff;
+}
+
+@media screen and (max-width:580px) {
+  .left-footer {
+    position: absolute;
+    bottom: 60px;
+  }
+
+  .left-footer ul li {
+    float: left;
+    padding: 2%;
+  }
+}

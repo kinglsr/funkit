@@ -92,6 +92,19 @@ hr, p {
             <user-log v-on:getcurrentuser="getCurrentUser"></user-log>
          </div>
          <!--Panel Tabs FINISHED-->
+         <div class="left-footer">
+            <ul class="">
+               <li class=""><a class="tabs-message-a" href="#"><i class="fa fa-user-circle"></i> Profile</a></li>
+               <li class=""><a class="active tabs-message-a" href="#"><i class="fa fa-cogs"></i> Settings</a></li>
+               <li class=""><a class="" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();"> <i class="fa fa-sign-out"></i> Logout</a></li>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+            </ul>
+         </div>
       </div>
       <!--Chat left STARTED-->
       <div class="chat-right">
@@ -160,7 +173,18 @@ $(function(){
 });  
 </script>
 <script>
-            $('.tooltip').tooltipster({
-              side:'top'
-            });
-    </script>
+ $(document).ready(function(){
+  // for mobile show buttons title on click
+  var documentWidth = $(window).width();
+  var trigger = 'hover';
+  if(documentWidth < 600) {
+    trigger = 'click';
+  }
+  // showing title of buttons
+  $('.tooltip').tooltipster({
+    side:'top',
+    trigger: trigger
+  });
+ }); 
+
+</script>
